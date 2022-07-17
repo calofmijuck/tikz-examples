@@ -1,0 +1,34 @@
+\documentclass[border=20pt,preview]{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{center}
+    \begin{tikzpicture}
+        \pgfmathsetmacro{\axislimit}{4.3}
+
+        \node[below right=1pt] (origin) at (0,0) {\(\rm{O}\)};
+        \draw [-stealth,thick] (-\axislimit, 0) -- (\axislimit, 0) node[below] {\(x\)};
+        \draw [-stealth,thick] (0, -\axislimit) -- (0, \axislimit) node[left] {\(y\)};
+
+        \draw [dotted] (0, 0) circle (3);
+
+        \coordinate (point_p) at (-2.91868, 0.693774);
+        \coordinate (point_q) at (1.91868, 2.30623);
+        \draw[] (point_p) -- (point_q);
+
+        \draw (point_q) arc (-13.3711:-129.7589:3);
+        \draw (point_q) arc (50.2410:-193.3711:3);
+
+        \node[below right] at (3, 0) {\(3\)};
+        \node[below left] at (-3, 0) {\(-3\)};
+        \node[below] at (-1, 0) {\(-1\)};
+        \node[above left=-3pt] at (point_p) {\(\rm{P}\)};
+        \node[above right=-3pt] at (point_q) {\(\rm{Q}\)};
+    \end{tikzpicture}
+\end{center}
+
+\end{document}
+
+
