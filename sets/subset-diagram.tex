@@ -1,0 +1,58 @@
+\documentclass[border=20pt,preview]{standalone}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\definecolor{darkGray}{RGB}{192, 192, 192}
+\definecolor{lightGray}{RGB}{229, 228, 226}
+
+\begin{document}
+
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        \draw (-3.5, 2.8) rectangle (3.5, -2.8);
+        \draw (-2.2, 2.8) node[fill=white] {\(U\)};
+
+        \filldraw[thick,fill=lightGray] (2.7, 0) arc (0:360:2.7 and 2.2);
+        \draw (0, 2.2) node[fill=white] {\(A\)};
+        \fill[fill=lightGray] (2.7, 0) arc (0:360:2.7 and 2.2);
+        \draw (0, 2.2) node {\(A\)};
+
+        \filldraw[thick,fill=darkGray] (1.7, 0) arc (0:360:1.7 and 1);
+        \draw (0, 1) node[fill=lightGray] {\(X\)};
+        \fill[fill=darkGray] (1.7, 0) arc (0:360:1.7 and 1);
+        \draw (0, 1) node {\(X\)};
+        \node (element) at (4.4, 0) {\(a_i\)};
+
+        \draw[-stealth, thick] (element) to[out=-140, in=-20] (0.7, -0.6);
+        \draw[-stealth, thick] (element) to[out=120, in=30] (1.8, 1.1);
+        \draw (4.7, 0) node[anchor=west] {\((i = 1, 2, \dots, n)\)};
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}[scale=1]
+        \draw (-3.5, 2.8) rectangle (3.5, -2.8);
+        \draw (-2.2, 2.8) node[fill=white] {\(U\)};
+
+        \filldraw[thick,fill=lightGray] (2.7, 0) arc (0:360:2.7 and 2.2);
+        \draw (0, 2.2) node[fill=white] {\(A\)};
+        \fill[fill=lightGray] (2.7, 0) arc (0:360:2.7 and 2.2);
+        \draw (0, 2.2) node {\(A\)};
+
+        \filldraw[thick,fill=darkGray] (1.7, 0) arc (0:360:1.7 and 1);
+        \draw (0, 1) node[fill=lightGray] {\(Y\)};
+        \fill[fill=darkGray] (1.7, 0) arc (0:360:1.7 and 1);
+        \draw (0, 1) node {\(Y\)};
+
+        \node (ai) at (4.6, 0) {\(a_i\)};
+
+        \draw[-stealth, thick] (ai) to[out=-140, in=-20] (0.7, -0.6);
+        \draw[-stealth, thick] (ai) to[out=120, in=30] (1.8, 1.1);
+        \draw (4.9, 0) node[anchor=west] {\((i = m+r+1, \dots, n)\)};
+
+        \node at (0, 0) {\(a_1,\, \dots,\, a_m\)};
+        \node at (0, 1.4) {\(a_{m+1},\, \dots,\, a_{m+r}\)};
+    \end{tikzpicture}
+\end{center}
+
+\end{document}
